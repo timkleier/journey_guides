@@ -1,0 +1,13 @@
+/* MIXINS */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/* GENERAL */
+
+#top_menu { @include border-radius(0); }
+#right_logo { position: fixed; right: 0; top: 0; height: 72px; width: 100px; }

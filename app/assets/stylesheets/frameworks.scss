@@ -1,0 +1,42 @@
+// Place all the styles related to the Frameworks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* MIXINS */
+
+@mixin background-size($bg_size) {
+    -webkit-background-size: $bg_size;
+    -moz-background-size: $bg_size;
+    -o-background-size: $bg_size;
+    background-size: $bg_size;
+}
+
+/* FRAMEWORK DESIGN */
+
+.ministry_timeline_bg { 
+    background: #87CEEB url(frameworks/ministry_timeline_bg.png) no-repeat center center fixed; 
+    @include background-size(cover);
+    height: 0;
+}
+
+.foreground { 
+  background-color: #99cc66; 
+  height: 200px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  
+  table { margin: 50px auto; width: 90%; }
+  table, th, td { border-collapse: collapse; text-align: center; padding: 5px; }
+  
+  .resource_tr {
+    line-height: 0;
+    td { padding: 0; border-bottom: 2px solid black; }
+  }
+  
+  .map-icon-trail-walking { font-size: 36px; }
+  
+  .resource { line-height: 4 !important; }
+  .resource_popup { max-width: 250px !important; }
+}
+

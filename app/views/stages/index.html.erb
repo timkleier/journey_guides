@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stages</h1>
+
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Framework</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stages.each do |stage| %>
+      <tr>
+        <td><%= ("&nbsp;&nbsp;" * stage.depth).to_s.html_safe + stage.title %></td>
+        <td><%= stage.framework.title %></td>
+        <td><%= link_to 'Show', stage %></td>
+        <td><%= link_to 'Edit', edit_stage_path(stage) %></td>
+        <td><%= link_to 'Destroy', stage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stage', new_stage_path %>

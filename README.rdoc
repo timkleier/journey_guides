@@ -1,0 +1,64 @@
+== README
+
+=== RESOURCES
+# Influential sites
+* This Year in Hashtags: http://yearinreview.hshtags.com/
+
+=== APIs
+
+# Bible APIs
+* Digital Bible Platform: http://www.digitalbibleplatform.com/
+* ESV Bible Web Service: http://www.esvapi.org/
+
+# Video APIs
+* GodTube: http://embed.ly/provider/godtube
+* YouTube: https://developers.google.com/youtube/
+
+# Book APIs
+* Goodreads: https://www.goodreads.com/api
+* NYTimes: http://developer.nytimes.com/docs/read/books_api/Books_API_Book_Reviews
+* Google Books: https://developers.google.com/books/docs/v1/using?hl=en
+
+# Music APIs
+* Last.fm: http://www.programmableweb.com/api/last.fm
+* Spotify: http://www.programmableweb.com/api/spotify-web
+* iTunes API
+
+# Event APIs
+* Eventful: http://api.eventful.com/
+
+
+=== MongoDB Utilies
+
+To repair db:
+* Remove mongoid.lock file in data folder
+* run mongod --repair
+* run "start mongod" or "./mongod"
+* control-C to shutdown
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

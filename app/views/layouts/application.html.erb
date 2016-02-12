@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html class="<%= framework_background if show_framework? %>">
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="top_menu" class="ui inverted menu">
+    <%= render partial: "layouts/menu" %>
+  </div>
+  <div id="right_logo"><%= link_to image_tag("journey-guides-small.png", size: "80x72"), root_url %></div>
+  <% if content_for :main %>
+    <%= yield :main %>
+  <% else %>
+    <div class="ui text container">
+      <%= yield %>
+    </div>
+  <% end %>
+</body>
+</html>

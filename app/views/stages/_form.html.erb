@@ -1,0 +1,33 @@
+<%= form_for(@stage, html: {class: "ui form"}) do |f| %>
+  <% if @stage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stage.errors.count, "error") %> prohibited this stage from being saved:</h2>
+
+      <ul>
+      <% @stage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :framework_id %><br>
+    <%= f.collection_select(:framework_id, Framework.all, :id, :title, prompt: true) %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br>
+    <%= f.collection_select(:parent_id, Stage.all.not.where(id: f.object.id), :id, :title, prompt: true) %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_ids %><br>
+    <%= f.select :resource_ids, options_from_collection_for_select(Resource.all, :id.to_s, :title, f.object.resource_ids.map{|x| x.to_s}), {}, { class: "ui multiple search selection dropdown", multiple: true, prompt: true } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
