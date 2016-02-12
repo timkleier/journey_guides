@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-
+ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-gem "mongoid", "~> 5.0.0"
+gem "mongoid", "~> 5.1.0"
 gem 'bson_ext'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
