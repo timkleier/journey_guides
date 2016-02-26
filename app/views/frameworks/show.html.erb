@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <% content_for :menu do %>
+  <%= link_to content_tag(:i, "", class: "large angle left icon"), frameworks_path, class: "item" %>
   <%= link_to semantic_icon("protect") + @framework.title.upcase, "#", class: "item" %>
+  <%= link_to " ", "#", class: "item" %>
+  <%= link_to "Journey", framework_path(@framework, mode: "journey"), class: "#{'active' if params[:mode] == 'journey' or !params[:mode]} item" %>
+  <%= link_to "Friends", framework_path(@framework, mode: "friends"), class: "#{'active' if params[:mode] == 'friends'} item" %>
+  <%= link_to "Settings", framework_path(@framework, mode: "settings"), class: "#{'active' if params[:mode] == 'settings'} item" %>
 <% end %>
 
 <% content_for :main do %>

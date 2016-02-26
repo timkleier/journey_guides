@@ -31,6 +31,14 @@
     <%= f.label :role %><br>
     <%= f.select :role, select_role, prompt: "Select" %>
   </div>
+  <div class="field">
+    <%= f.label :friend_ids %><br>
+    <%= f.select :friend_ids, options_from_collection_for_select(User.all, :id.to_s, :name, f.object.friend_ids.map{|x| x.to_s}), {}, { class: "ui multiple search selection dropdown", multiple: true, prompt: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :stage_id %><br>
+    <%= f.select :stage_id, options_from_collection_for_select(Stage.all, :id.to_s, :title, f.object.stage_id), {}, { class: "ui search selection dropdown", prompt: true } %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
